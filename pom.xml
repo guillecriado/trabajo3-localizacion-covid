@@ -19,6 +19,7 @@
 		<maven.compiler.target>21</maven.compiler.target>
 		<sonar.organization>guillecriado</sonar.organization>
   		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		
 	</properties>
 
 	<dependencies>
