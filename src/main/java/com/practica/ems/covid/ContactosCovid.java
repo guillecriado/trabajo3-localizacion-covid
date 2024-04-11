@@ -131,8 +131,9 @@ public class ContactosCovid {
 			for (String linea : datas) {
 				String datos[] = this.dividirLineaData(linea);
 				if (!datos[0].equals("PERSONA") && !datos[0].equals("LOCALIZACION")) {
-					if (!datos[0].equals("LOCALIZACION"))
 						throw new EmsInvalidTypeException();
+					}
+					if (datos[0].equals("PERSONA")) {
 					if (datos.length != Constantes.MAX_DATOS_PERSONA) {
 						throw new EmsInvalidNumberOfDataException("El número de datos para PERSONA es menor de 8");
 					}
