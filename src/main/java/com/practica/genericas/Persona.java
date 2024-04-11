@@ -1,47 +1,29 @@
 package com.practica.genericas;
 
-
 public class Persona {
-	private String nombre, apellidos, documento, email, direccion, cp;
+	private String email, direccion, cp;
 	FechaHora fechaNacimiento;
+	private IdentidadPersona identidadPersona;
 
 	public Persona() {
 
 	}
 
-	public Persona(String nombre, String apellidos, String documento, String email, String direccion,
+	public Persona(IdentidadPersona identidadPersona, String email, String direccion,
 			FechaHora fechaNacimiento) {
 		super();
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.documento = documento;
+		this.identidadPersona = identidadPersona;
 		this.email = email;
 		this.direccion = direccion;
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public IdentidadPersona getIdentidadPersona() {
+		return identidadPersona;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getApellidos() {
-		return apellidos;
-	}
-
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
-	}
-
-	public String getDocumento() {
-		return documento;
-	}
-
-	public void setDocumento(String documento) {
-		this.documento = documento;
+	public void setIdentidadPersona(IdentidadPersona identidadPersona) {
+		this.identidadPersona = identidadPersona;
 	}
 
 	public String getEmail() {
@@ -81,17 +63,17 @@ public class Persona {
 		FechaHora fecha = getFechaNacimiento();
 		String cadena = "";
 		// Documento
-		cadena += String.format("%s;", getDocumento());
+		cadena += String.format("%s;", identidadPersona.getDocumento());
 		// Nombre y apellidos
-		cadena += String.format("%s,%s;", getApellidos(), getNombre());
+		cadena += String.format("%s,%s;", identidadPersona.getApellidos(), identidadPersona.getNombre());
 		// correo electrónico
 		cadena += String.format("%s;", getEmail());
-        // Direccion y código postal
+		// Direccion y código postal
 		cadena += String.format("%s,%s;", getDireccion(), getCp());
-        // Fecha de nacimiento
-		cadena+=String.format("%02d/%02d/%04d\n", fecha.getFecha().getDia(), 
-        		fecha.getFecha().getMes(), 
-        		fecha.getFecha().getAnio());
+		// Fecha de nacimiento
+		cadena += String.format("%02d/%02d/%04d\n", fecha.getFecha().getDia(),
+				fecha.getFecha().getMes(),
+				fecha.getFecha().getAnio());
 
 		return cadena;
 	}
