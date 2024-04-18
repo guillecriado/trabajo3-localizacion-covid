@@ -96,11 +96,7 @@ public class ListaContactos {
 			}
 		}
 		if (!npEncontrado) {
-			NodoPosicion npNuevo = new NodoPosicion(p.getCoordenada(), 1, null);
-			if (aux.getListaCoordenadas() == null)
-				aux.setListaCoordenadas(npNuevo);
-			else
-				npAnt.setSiguiente(npNuevo);
+			npNoEncontrado(npAnt, aux, p);
 		}
 	}
 
