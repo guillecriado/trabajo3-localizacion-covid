@@ -140,8 +140,8 @@ public class ListaContactos {
 			if (aux.getFecha().compareTo(inicio) >= 0 && aux.getFecha().compareTo(fin) <= 0) {
 				NodoPosicion nodo = aux.getListaCoordenadas();
 				while (nodo != null) {
-					cont = cont + nodo.getNumPersonas();
 					nodo = nodo.getSiguiente();
+					cont = cont + nodo.getNumPersonas();
 				}
 				aux = aux.getSiguiente();
 			} else {
